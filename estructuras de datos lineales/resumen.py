@@ -1,0 +1,214 @@
+"""
+Revisión de Estructuras de Datos
+Algoritmos y Notación Big O
+Algoritmos: Un conjunto de instrucciones inequívocas para resolver un problema o realizar una tarea. Los algoritmos deben terminar en un número finito de pasos y cada paso debe ser preciso e inequívoco.
+
+Notación Big O: Describe el rendimiento en el peor caso, o la tasa de crecimiento, de un algoritmo a medida que aumenta el tamaño de la entrada. Se enfoca en cómo crece el uso de recursos con el tamaño de la entrada, ignorando factores constantes y términos de orden inferior.
+
+Complejidades de Tiempo Comunes
+O(1) - Tiempo constante: El algoritmo toma la misma cantidad de tiempo sin importar el tamaño de la entrada.
+Código de ejemplo
+def check_even_or_odd(number):
+    if number % 2 == 0:
+        return 'Even'
+    else:
+        return 'Odd'
+O(log n) - Tiempo Logarítmico: El tiempo aumenta lentamente a medida que crece la entrada. Común en algoritmos que reducen repetidamente el tamaño del problema por una fracción (como Binary Search).
+
+O(n) - Tiempo lineal: El tiempo de ejecución aumenta proporcionalmente al tamaño de la entrada.
+
+Código de ejemplo
+for grade in grades:
+    print(grade)
+O(n log n) - Tiempo log-lineal: Complejidad temporal común de algoritmos de ordenamiento eficientes como Merge Sort y Quick Sort.
+
+O(n²) - Tiempo cuadrático: El tiempo de ejecución aumenta de forma cuadrática. Frecuentemente se observa en bucles anidados.
+
+Código de ejemplo
+for i in range(n):
+    for j in range(n):
+        print("Hello, World!")
+Complejidad Espacial
+O(1) - Espacio constante: El algoritmo usa la misma cantidad de memoria sin importar el tamaño de la entrada.
+O(n) - Espacio lineal: El uso de memoria crece proporcionalmente con el tamaño de la entrada.
+O(n²) - Espacio cuadrático: El uso de memoria crece cuadráticamente con el tamaño de la entrada.
+Técnicas de resolución de problemas
+Entendiendo el Problema: Lee la declaración del problema varias veces. Identifica la entrada, la salida esperada y cómo transformar la entrada en salida.
+
+Pseudocódigo: Descripción de alto nivel de la lógica del algoritmo que es independiente del lenguaje. Usa lenguaje escrito común mezclado con estructuras de programación como IF, ELSE, FOR, WHILE.
+
+Código de ejemplo
+GET original_string
+SET reversed_string = ""
+FOR EACH character IN original_string:
+  ADD character TO THE BEGINNING OF reversed_string
+DISPLAY reversed_string
+Casos límite: Entradas específicas y válidas que ocurren en los límites de lo que un algoritmo debe manejar. Siempre considera y prueba los casos límite.
+Arreglos
+Arreglos Estáticos: Tienen un tamaño fijo determinado en la inicialización. Los elementos se almacenan en ubicaciones de memoria adyacentes. El tamaño no puede cambiarse durante la ejecución del programa.
+
+Arreglos Dinámicos: Pueden crecer o reducirse automáticamente durante la ejecución del programa. Maneja el cambio de tamaño mediante la copia automática a arreglos más grandes cuando sea necesario.
+
+Listas de Python (Arreglos Dinámicos)
+Código de ejemplo
+numbers = [3, 4, 5, 6]
+
+# Access elements
+numbers[0]  # 3
+
+# Update elements
+numbers[2] = 16
+
+# Add elements
+numbers.append(7)
+numbers.insert(3, 15)  # Insert at specific index
+
+# Remove elements
+numbers.pop(2)  # Remove at specific index
+numbers.pop()   # Remove last element
+Complejidades de Tiempo para Arreglos Dinámicos
+Acceso: O(1)
+Insertar al final: O(1) promedio, O(n) cuando se necesita redimensionar
+Insertar en medio: O(n)
+Eliminar: O(n) para medio, O(1) para final
+Pilas
+Pilas: estructura de datos Last-In, First-Out (LIFO). Los elementos se agregan y eliminan solo desde la parte superior.
+
+Operación Push: Agregar un elemento a la cima de la pila. Complejidad temporal: O(1).
+
+Operación Pop: Eliminar un elemento de la cima de la pila. Complejidad temporal: O(1).
+
+Código de ejemplo
+# Using Python list as stack
+stack = []
+
+# Push operations
+stack.append(1)
+stack.append(2)
+stack.append(3)
+
+# Pop operations
+top_element = stack.pop()  # Returns 3
+Colas
+Colas: estructura de datos First-In, First-Out (FIFO). Los elementos se agregan al final y se eliminan desde el frente.
+
+Operación Enqueue: Agregar un elemento al final de la cola. Complejidad temporal: O(1).
+
+Operación Dequeue: Eliminar un elemento del frente de la cola. Complejidad temporal: O(1).
+
+Código de ejemplo
+from collections import deque
+
+# Using deque for efficient queue operations
+queue = deque()
+
+# Enqueue operations
+queue.append(1)
+queue.append(2)
+queue.append(3)
+
+# Dequeue operations
+first_element = queue.popleft()  # Returns 1
+Listas enlazadas
+Listas enlazadas: estructura de datos lineal donde cada nodo contiene datos y una referencia al siguiente nodo. Los nodos están conectados como una cadena.
+Listas enlazadas simples
+Estructura: Cada nodo tiene datos y una referencia al siguiente nodo.
+Recorrido: Solo se puede mover hacia adelante desde la cabeza hasta la cola.
+Nodo Principal: Primer nodo en la lista, usualmente el único nodo accesible directamente.
+Nodo final: Último nodo en la lista, apunta a None.
+Operaciones y Complejidades de Tiempo
+Insertar al principio: O(1)
+Insertar al final: O(n) - debe recorrer hasta el final
+Insertar en medio: O(n) - debe recorrer hasta la posición
+Eliminar desde el principio: O(1)
+Eliminar desde el final: O(n) - debe recorrer para encontrar el nodo anterior
+Eliminar desde el medio: O(n) - debe recorrer para encontrar el nodo
+Listas Doblemente Enlazadas
+Estructura: Cada nodo tiene datos y dos referencias: nodo siguiente y nodo anterior.
+Recorrido: Puede moverse en ambas direcciones.
+Memoria: Requiere más memoria que las listas enlazadas simples debido a la referencia adicional.
+Mapas Hash y Sets
+Mapas y Hash Maps
+Mapa (Tipo Abstracto de Datos): Gestiona colecciones de pares clave-valor. Cada clave debe ser única, pero los valores pueden repetirse.
+
+Hash Map: Implementación concreta del ADT map usando la técnica de hashing. Usa una función hash para generar valores hash para las claves, que determinan la ubicación de almacenamiento en el arreglo subyacente.
+
+Diccionarios de Python (Mapas Hash)
+Código de ejemplo
+# Creating dictionaries
+my_dictionary = {
+    "A": 1,
+    "B": 2, 
+    "C": 3
+}
+
+# Alternative creation
+my_dictionary = dict(A=1, B=2, C=3)
+
+# Access and modify
+value = my_dictionary["A"]  # 1
+my_dictionary["A"] = 4      # Update value
+del my_dictionary["A"]      # Remove key-value pair
+
+# Check membership
+"C" in my_dictionary
+
+# Get keys, values, items
+my_dictionary.keys()
+my_dictionary.values()
+my_dictionary.items()
+Complejidades de tiempo para Hash Maps
+Caso promedio: O(1) para insert, get, delete
+Peor caso: O(n) cuando ocurren muchas colisiones de hash
+Conjuntos
+Conjuntos: Colecciones no ordenadas de elementos únicos. No se permiten duplicados, no se mantiene un orden específico.
+
+Solo elementos inmutables: Los conjuntos solo pueden contener tipos de datos inmutables (números, cadenas, tuplas) porque los valores hash deben permanecer constantes.
+
+Código de ejemplo
+# Creating sets
+numbers = {1, 2, 3, 4}
+empty_set = set()  # Must use set(), not {}
+
+# Add and remove elements
+numbers.add(5)
+numbers.remove(4)      # Raises KeyError if not found
+numbers.discard(4)     # No error if not found
+
+# Set operations
+set_a = {1, 2, 3, 4}
+set_b = {2, 3, 4, 5, 6}
+
+# Union, intersection, difference, symmetric difference
+set_a.union(set_b)                    # or set_a | set_b
+set_a.intersection(set_b)             # or set_a & set_b
+set_a.difference(set_b)               # or set_a - set_b
+set_a.symmetric_difference(set_b)     # or set_a ^ set_b
+
+# Subset and superset checks
+set_a.issubset(set_b)
+set_a.issuperset(set_b)
+set_a.isdisjoint(set_b)
+
+# Membership testing
+5 in numbers
+Complejidades de tiempo para Sets
+Caso promedio: O(1) para add, remove, membership testing
+Peor caso: O(n) debido a colisiones de hash
+Colisiones de Hash
+Colisión de Hash: Ocurre cuando dos claves diferentes producen el mismo valor hash.
+
+Estrategias de Resolución de Colisiones:
+
+Encadenamiento: Cada índice del arreglo apunta a una lista enlazada que almacena todos los elementos con el mismo valor hash
+Open Addressing: Busca el siguiente índice disponible usando una secuencia predefinida
+Cuándo usar cada estructura de datos
+Listas: Cuando necesitas acceso ordenado e indexado y no conoces el tamaño de antemano
+Pilas: Para operaciones LIFO (funcionalidad de deshacer, evaluación de expresiones, retroceso)
+Colas: Para operaciones FIFO (planificación de tareas, búsqueda en anchura)
+Listas enlazadas: Cuando se requiere inserción/eliminación frecuente al inicio, tamaño desconocido, no se necesita acceso aleatorio
+Mapas Hash: Para búsquedas rápidas de clave-valor, contar ocurrencias, almacenamiento en caché
+Conjuntos: Para verificar unicidad, operaciones matemáticas de conjuntos, eliminar duplicados
+
+
+"""
