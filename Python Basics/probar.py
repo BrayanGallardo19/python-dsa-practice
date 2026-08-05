@@ -4,3 +4,12 @@ class Dog:
         self.age = age
         #esto genera un error de tipo 
 
+x = []
+
+def f(a = x):
+    a.append(1)
+    print(a)
+f()
+f()
+
+print(x)
