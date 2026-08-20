@@ -1,4 +1,4 @@
-# 🐍 Python Certification
+# 🐍 Python DSA Practice
 
 Repositorio de práctica y estudio de Python, organizado por temas, desarrollado como preparación para certificaciones de Python (fundamentos, POO, estructuras de datos, algoritmos y análisis de datos).
 
